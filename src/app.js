@@ -18,6 +18,7 @@ import {
   textoffset,
   subtextOffset,
   imageOffset,
+  addMainNodes
 } from './data';
 
 
@@ -115,11 +116,7 @@ const circles = svg
   .enter() //ex
   .append('circle')
   .attr('fill', (node) => node.color || 'gray')
-  .attr(
-    'r',
-    (node) =>
-      nodeSizes[node.id] || defaultNodeSize
-  )
+  .attr('r', (node) => defaultNodeSize)
   .call(dragInteraction);
 
 //image element in svg with clip-path to palce it centre the circle
